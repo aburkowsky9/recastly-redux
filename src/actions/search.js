@@ -5,8 +5,18 @@ import YOUTUBE_API_KEY from '../config/youtube.js';
 
 
 var handleVideoSearch = (q) => {
- 
-  //TODO:  Write an asynchronous action to handle a video search!
+  //get data using search youtube
+  //parse data into action creators
+  //dispatch? data to store or to rootTeducer
+  return (dispatch) => {
+    searchYouTube({YOUTUBE_API_KEY, q}, (data) => {
+      dispatch(changeVideo(data[0])),
+      dispatch(changeVideoList(data.slice(1)))
+    });
+  }
 };
 
+
 export default handleVideoSearch;
+
+

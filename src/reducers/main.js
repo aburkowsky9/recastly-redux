@@ -2,12 +2,25 @@ import { combineReducers } from 'redux';
 import currentVideo from './currentVideo.js';
 import videoList from './videoList.js';
 
-var rootReducer = () => {};
+var rootReducer = combineReducers({
+  videoList,
+  currentVideo
+})
 
-//TODO: define the root reducer for this app
 
-//HINT: you'll need to combine the other two reducers in this
-//  app into a single reducer using the 'combineReducers' method
-//  listed above.
+// var rootReducer = (state = {}, action) => {
+//   return {
+//     videoList: videoList(state.videoList, action),
+//     currentVideo: currentVideo(state.currentVideo, action)
+//   }
+// };
+
+
+//given a state and an action
+//we pass it the individual reducer functions
+//we need to make sure we pass the correct part of the state
+  //to the corresponding reducer. this is so the defaults work
+  //correctly for the individual state properties
+
 
 export default rootReducer;
